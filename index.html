@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Shivam Mishra | Web Developer</title>
+  <meta name="description" content="Portfolio of Shivam Mishra, web developer from India specializing in fast, responsive websites, online stores, and AI chat assistants for local businesses.">
+  <meta name="theme-color" content="#F5F4F0">
+
+  <!-- Inline Fail-Safe: Marks JS active and guards against script failure -->
+  <script>
+    document.documentElement.classList.add('has-js');
+    setTimeout(function() {
+      if (!window.__motionReady) {
+        document.documentElement.classList.remove('has-js');
+        document.documentElement.classList.add('motion-fallback');
+      }
+    }, 8000);
+  </script>
+
+  <!-- Google Fonts: Display Swap with Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Accessible Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Star Cursor Element (Fine pointers only) -->
+  <div id="star-cursor" aria-hidden="true">
+    <svg viewBox="0 0 100 100" focusable="false">
+      <path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z" />
+    </svg>
+  </div>
+
+  <!-- Opening Cinematic Overlay (#intro & #bloom) -->
+  <div id="intro" aria-hidden="true">
+    <button id="intro-skip" class="intro-skip" type="button" aria-label="Skip intro animation">Skip</button>
+    <div class="intro-stage">
+      <div id="intro-word">Portfolio</div>
+      <div id="intro-dot">
+        <div class="dot-glow"></div>
+      </div>
+      <svg id="intro-star" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+        <path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z" />
+      </svg>
+      <div class="star-glow-layer"></div>
+    </div>
+  </div>
+  <div id="bloom" aria-hidden="true"></div>
+
+  <!-- Primary Site Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#hero" class="brand-logo" aria-label="Shivam Mishra - Home">
+        <svg class="brand-star" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+          <path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z" />
+        </svg>
+        <span data-contact-text="name">Shivam Mishra</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#statement" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contact" class="pill-btn" data-contact="whatsapp">Let's talk</a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Navigation Dialog -->
+  <nav id="mobile-nav" class="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="mobile-nav-top">
+      <span class="brand-logo">
+        <svg class="brand-star" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+          <path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z" />
+        </svg>
+        <span>Shivam Mishra</span>
+      </span>
+      <button class="mobile-nav-close" id="mobile-nav-close" type="button" aria-label="Close navigation menu">✕</button>
+    </div>
+
+    <ul class="mobile-nav-links">
+      <li><a href="#work" class="mobile-nav-link">Work</a></li>
+      <li><a href="#statement" class="mobile-nav-link">About</a></li>
+      <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+
+    <div class="mobile-nav-bottom">
+      <a href="#" class="mobile-nav-contact" data-contact="email" data-contact-text="email">8hivammishra8@gmail.com</a>
+      <a href="#" class="mobile-nav-contact" data-contact="phone" data-contact-text="phone">91+ 9899452192</a>
+    </div>
+  </nav>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-badge">
+            <svg class="badge-star" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+              <path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z" />
+            </svg>
+            <span>Web developer, India ✦ Available for new projects</span>
+          </div>
+
+          <h1 class="hero-title" id="hero-headline">
+            Websites that bring <span class="italic-serif">customers</span> through the door.
+          </h1>
+
+          <p class="hero-subtext">
+            I'm Shivam Mishra. I design and build fast, animated websites, online stores and AI assistants for local businesses.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="pill-btn magnetic-item">See the work</a>
+            <a href="#" class="btn-secondary magnetic-item" data-contact="whatsapp">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="hero-cards-wrap" id="hero-cards">
+          <!-- Card 1: Dental -->
+          <article class="hero-card hero-card-1">
+            <div class="hero-card-img-box">
+              <img src="dental.jpg" alt="Lumina Dental Studio website overview" width="1200" height="800" decoding="async" class="hero-card-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
+            </div>
+            <div class="hero-card-label">
+              <span>Lumina Dental Studio</span>
+              <span>01</span>
+            </div>
+          </article>
+
+          <!-- Card 2: Roofing -->
+          <article class="hero-card hero-card-2">
+            <div class="hero-card-img-box">
+              <img src="roofing.jpg" alt="Ironcrest Roofing website overview" width="1200" height="800" decoding="async" class="hero-card-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
+            </div>
+            <div class="hero-card-label">
+              <span>Ironcrest Roofing</span>
+              <span>02</span>
+            </div>
+          </article>
+
+          <!-- Card 3: Coffee -->
+          <article class="hero-card hero-card-3">
+            <div class="hero-card-img-box">
+              <img src="coffee.jpg" alt="Cinder and Cedar Coffee Roasters website overview" width="1200" height="800" decoding="async" class="hero-card-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
+            </div>
+            <div class="hero-card-label">
+              <span>Cinder &amp; Cedar Coffee</span>
+              <span>03</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Velocity Marquee Section -->
+    <section class="marquee-section" id="marquee" aria-hidden="true">
+      <div class="marquee-row">
+        <div class="marquee-track-1">
+          <span class="marquee-text">Websites</span>
+          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+          <span class="marquee-text">Online Stores</span>
+          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+          <span class="marquee-text">Booking Tools</span>
+          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+          <span class="marquee-text">AI Assistants</span>
+          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+          <span class="marquee-text">Smooth Animations</span>
+          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+        </div>
+      </div>
+
+      <div class="marquee-row">
+        <div class="marquee-track-2">
+          <span class="marquee-text">Websites</span>
+          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+          <span class="marquee-text">Online Stores</span>
+          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+          <span class="marquee-text">Booking Tools</span>
+          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+          <span class="marquee-text">AI Assistants</span>
+          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+          <span class="marquee-text">Smooth Animations</span>
+          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Stages Section -->
+    <section class="work-section" id="work">
+      <div class="work-header">
+        <h2 class="work-header-title">Selected work (03)</h2>
+      </div>
+
+      <!-- Stage 01: Lumina Dental Studio -->
+      <article class="work-stage bg-ink">
+        <div class="stage-inner">
+          <div class="stage-info">
+            <span class="stage-num">01</span>
+            <span class="stage-badge">Concept project</span>
+            <h3 class="stage-title">Lumina Dental Studio</h3>
+            <p class="stage-desc">Modern dental clinic website designed for clear patient onboarding and treatment education.</p>
+            <div class="stage-tags">
+              <span class="stage-tag">Booking flow</span>
+              <span class="stage-tag">Financing calculator</span>
+              <span class="stage-tag">Before-after slider</span>
+            </div>
+            <a href="https://lumina-dental-studio-iota.vercel.app/" target="_blank" rel="noopener noreferrer" class="stage-link magnetic-item">
+              <span>View live site</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="browser-frame">
+            <div class="frame-bar">
+              <div class="frame-dots">
+                <span class="frame-dot"></span>
+                <span class="frame-dot"></span>
+                <span class="frame-dot"></span>
+              </div>
+              <span class="frame-url">lumina-dental-studio-iota.vercel.app</span>
+              <div style="width: 38px;"></div>
+            </div>
+            <div class="frame-viewport">
+              <img src="dental.jpg" alt="Lumina Dental Studio full landing page view" width="1200" height="3600" decoding="async" class="frame-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stage 02: Ironcrest Roofing -->
+      <article class="work-stage bg-paper">
+        <div class="stage-inner">
+          <div class="stage-info">
+            <span class="stage-num">02</span>
+            <span class="stage-badge">Concept project</span>
+            <h3 class="stage-title">Ironcrest Roofing &amp; Restoration</h3>
+            <p class="stage-desc">High-converting roofing contractor platform built around trust, instant estimates, and project showcases.</p>
+            <div class="stage-tags">
+              <span class="stage-tag">Instant estimate</span>
+              <span class="stage-tag">Inspection booking</span>
+              <span class="stage-tag">Project sliders</span>
+            </div>
+            <a href="https://roofing-portfolio-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="stage-link magnetic-item">
+              <span>View live site</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="browser-frame">
+            <div class="frame-bar">
+              <div class="frame-dots">
+                <span class="frame-dot"></span>
+                <span class="frame-dot"></span>
+                <span class="frame-dot"></span>
+              </div>
+              <span class="frame-url">roofing-portfolio-two.vercel.app</span>
+              <div style="width: 38px;"></div>
+            </div>
+            <div class="frame-viewport">
+              <img src="roofing.jpg" alt="Ironcrest Roofing full landing page view" width="1200" height="3800" decoding="async" class="frame-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stage 03: Cinder & Cedar Coffee -->
+      <article class="work-stage bg-ink">
+        <div class="stage-inner">
+          <div class="stage-info">
+            <span class="stage-num">03</span>
+            <span class="stage-badge">Concept project</span>
+            <h3 class="stage-title">Cinder &amp; Cedar Coffee Roasters</h3>
+            <p class="stage-desc">Artisanal e-commerce storefront focused on roast profiles, subscription discovery, and fast drawer checkout.</p>
+            <div class="stage-tags">
+              <span class="stage-tag">Product search</span>
+              <span class="stage-tag">Cart drawer</span>
+              <span class="stage-tag">Demo checkout</span>
+            </div>
+            <a href="https://cinder-cedar-coffee-roasters.vercel.app/" target="_blank" rel="noopener noreferrer" class="stage-link magnetic-item">
+              <span>View live site</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="browser-frame">
+            <div class="frame-bar">
+              <div class="frame-dots">
+                <span class="frame-dot"></span>
+                <span class="frame-dot"></span>
+                <span class="frame-dot"></span>
+              </div>
+              <span class="frame-url">cinder-cedar-coffee-roasters.vercel.app</span>
+              <div style="width: 38px;"></div>
+            </div>
+            <div class="frame-viewport">
+              <img src="coffee.jpg" alt="Cinder and Cedar Coffee Roasters full storefront view" width="1200" height="3500" decoding="async" class="frame-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Statement Section (Scrubbed Typography) -->
+    <section class="statement-section" id="statement">
+      <p class="statement-p" id="statement-text">
+        I'm Shivam, a web developer from India. I build fast, animated websites, online stores and AI assistants for small businesses. The three projects above are concept builds that show what I can make for your industry.
+      </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+      <h2 class="skills-title">Core capabilities</h2>
+
+      <div class="skills-list">
+        <div class="skill-row">
+          <span class="skill-num">01</span>
+          <div class="skill-main">
+            <h3 class="skill-heading">Business websites</h3>
+            <p class="skill-desc">Modern responsive websites tailored for service businesses and studios.</p>
+          </div>
+          <svg class="skill-star-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+        </div>
+
+        <div class="skill-row">
+          <span class="skill-num">02</span>
+          <div class="skill-main">
+            <h3 class="skill-heading">Online stores</h3>
+            <p class="skill-desc">Fast e-commerce storefronts with catalog filters, cart systems and checkout flows.</p>
+          </div>
+          <svg class="skill-star-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+        </div>
+
+        <div class="skill-row">
+          <span class="skill-num">03</span>
+          <div class="skill-main">
+            <h3 class="skill-heading">Booking and quote tools</h3>
+            <p class="skill-desc">Custom interactive estimators and multi-step inquiry forms that convert leads.</p>
+          </div>
+          <svg class="skill-star-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+        </div>
+
+        <div class="skill-row">
+          <span class="skill-num">04</span>
+          <div class="skill-main">
+            <h3 class="skill-heading">Smooth animations</h3>
+            <p class="skill-desc">High-performance cinematic interactions and page motion engineered with GSAP.</p>
+          </div>
+          <svg class="skill-star-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+        </div>
+
+        <div class="skill-row">
+          <span class="skill-num">05</span>
+          <div class="skill-main">
+            <h3 class="skill-heading">AI chat assistants</h3>
+            <p class="skill-desc">Custom trained chatbots and AI customer service widgets embedded into web workflows.</p>
+          </div>
+          <svg class="skill-star-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+        </div>
+
+        <div class="skill-row">
+          <span class="skill-num">06</span>
+          <div class="skill-main">
+            <h3 class="skill-heading">Web apps and dashboards</h3>
+            <p class="skill-desc">
+              Dynamic client portals and operational tools.
+              <a href="https://smartreviewshield.com" target="_blank" rel="noopener noreferrer" class="skill-extra-link">Example: ReviewShield AI ↗</a>
+            </p>
+          </div>
+          <svg class="skill-star-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-inner">
+        <h2 class="contact-title">Let's talk.</h2>
+
+        <div class="contact-list">
+          <!-- WhatsApp -->
+          <a href="#" class="contact-row magnetic-item" data-contact="whatsapp">
+            <div class="contact-meta">
+              <span class="contact-label">Fast response</span>
+              <span class="contact-detail">WhatsApp</span>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+
+          <!-- Email -->
+          <a href="#" class="contact-row magnetic-item" data-contact="email">
+            <div class="contact-meta">
+              <span class="contact-label">Direct inbox</span>
+              <span class="contact-detail" data-contact-text="email">8hivammishra8@gmail.com</span>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+
+          <!-- Phone -->
+          <a href="#" class="contact-row magnetic-item" data-contact="phone">
+            <div class="contact-meta">
+              <span class="contact-label">Voice call</span>
+              <span class="contact-detail" data-contact-text="phone">91+ 9899452192</span>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="#" class="contact-row magnetic-item" data-contact="instagram">
+            <div class="contact-meta">
+              <span class="contact-label">Social updates</span>
+              <span class="contact-detail" data-contact-text="instagram">@shivam.0nyx</span>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-signature-wrap">
+          <span class="footer-signature" id="footer-signature">Shivam</span>
+        </div>
+        <p class="footer-disclaimer">Projects shown are concept builds for fictional businesses.</p>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Shivam Mishra</p>
+        <div class="footer-actions">
+          <button type="button" class="footer-btn" id="replay-intro">Replay intro</button>
+          <button type="button" class="footer-btn" id="back-to-top">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External CDNs: Strict Order (GSAP, ScrollTrigger, Lenis) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Application Scripts: Strict Order -->
+  <script src="script.js"></script>
+  <script src="intro.js"></script>
+  <script src="motion.js"></script>
+
+  <!-- AI Chat Widget will mount here -->
+</body>
+</html>
