@@ -1,57 +1,151 @@
 /* ==========================================================================
    script.js — Portfolio ✦ Shivam Mishra
-   Flags, Contact Data, Hydration, Safe Image Loader, Mobile Dialog
+   Master Configuration, Procedural Web Audio Synth, Contact Engine, Sound State
    ========================================================================== */
 
-// 1. CONFIGURATION FLAGS (Line 7 to 13)
+// 1. GLOBAL SYSTEM CONFIGURATION
 window.SITE = {
-  INTRO: true,               // true = cinematic opening play karega; false = seedhe page dikhayega
-  STAR_CURSOR: true,         // true = custom four-point star cursor enable hoga
-  IMAGE_MOTION: "full",      // "full" | "lite" | "none" (screenshot scrub aur card parallax control)
-  introReady: null,          // Promise: intro bloom ke 70% par resolve hoga
-  _resolveIntro: null        // Internal resolver function
+  INTRO: true,               // Cinematic cyber reveal enabled
+  SOUND_ENABLED: false,      // Procedural audio synthesizer state (toggled via UI)
+  STAR_CURSOR: true,         // Interactive magnetic cursor
+  IMAGE_MOTION: "full",      // 3D perspective tilt & frame scrub
+  introReady: null,          // Overlap promise for hero reveal
+  _resolveIntro: null
 };
 
-// Promise initialization taaki motion.js intro ka wait kar sake
 window.SITE.introReady = new Promise((resolve) => {
   window.SITE._resolveIntro = resolve;
 });
 
-// 2. CONTACT DETAILS (Line 21 to 29) — Sirf yahin par Shivam Mishra ke details exist karte hain
+// 2. CONTACT DETAILS & POSITIONING (Single Source of Truth)
 const CONTACT = {
   name: "Shivam Mishra",
+  role: "Creative Developer & Full-Stack Engineer",
   email: "8hivammishra8@gmail.com",
   whatsappNumber: "919899452192",
   phone: "91+ 9899452192",
   phoneClean: "+919899452192",
   instagram: "shivam.0nyx",
-  whatsappMessage: "Hi Shivam, I saw your portfolio and would like to discuss a website.",
-  emailSubject: "Website project"
+  location: "New Delhi, India (UTC +5:30)",
+  whatsappMessage: "Hi Shivam, I saw your portfolio and would like to discuss building a high-end project.",
+  emailSubject: "Inquiry: Custom Web / SaaS Development"
 };
 
-// Utility: Prefers reduced motion detection
+// 3. UTILITY DETECTORS
 window.SITE.isReducedMotion = function () {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 };
 
-// Utility: Fine pointer check (mouse vs touch)
 window.SITE.isFinePointer = function () {
   return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 };
 
 /* ==========================================================================
-   DOM Ready: Contact Hydration & Core Interactivity
+   4. Procedural Web Audio API Synthesizer (Aashish Thakuri / Studio Sound)
+   Zero external MP3s — 100% mathematical zero-latency audio synthesis
+   ========================================================================== */
+const SoundEngine = (function () {
+  let audioCtx = null;
+
+  function getAudioContext() {
+    if (!audioCtx && (window.AudioContext || window.webkitAudioContext)) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      audioCtx = new AudioContextClass();
+    }
+    if (audioCtx && audioCtx.state === "suspended") {
+      audioCtx.resume();
+    }
+    return audioCtx;
+  }
+
+  return {
+    // Subtle high-tech click blip on button presses
+    playClick() {
+      if (!window.SITE.SOUND_ENABLED) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(820, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(320, ctx.currentTime + 0.04);
+
+      gain.gain.setValueAtTime(0.08, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.04);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.04);
+    },
+
+    // Subtle micro-tick on element hover
+    playHover() {
+      if (!window.SITE.SOUND_ENABLED) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = "triangle";
+      osc.frequency.setValueAtTime(440, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(660, ctx.currentTime + 0.025);
+
+      gain.gain.setValueAtTime(0.035, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.025);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.025);
+    },
+
+    // Low-frequency atmospheric whoosh on transitions / cards
+    playSwoosh() {
+      if (!window.SITE.SOUND_ENABLED) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(140, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(45, ctx.currentTime + 0.18);
+
+      gain.gain.setValueAtTime(0.09, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.18);
+    }
+  };
+})();
+
+window.SoundEngine = SoundEngine;
+
+/* ==========================================================================
+   5. DOM Initialization & Hydration
    ========================================================================== */
 document.addEventListener("DOMContentLoaded", () => {
   hydrateContactDetails();
-  initMobileMenu();
+  initSoundToggle();
+  initLiveClock();
   initBackToTop();
   setupImagePreloading();
   setupFailSafeWatchdog();
 });
 
 /**
- * Hydrates all contact elements marked with data-contact or data-contact-text
+ * Hydrates all dynamic links, texts and accessibility tags
  */
 function hydrateContactDetails() {
   const waUrl = `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(CONTACT.whatsappMessage)}`;
@@ -59,40 +153,34 @@ function hydrateContactDetails() {
   const telUrl = `tel:${CONTACT.phoneClean}`;
   const igUrl = `https://instagram.com/${CONTACT.instagram}`;
 
-  // Link URLs
+  // URLs
   document.querySelectorAll('[data-contact="whatsapp"]').forEach((el) => {
     el.setAttribute("href", waUrl);
-    if (!el.getAttribute("aria-label")) {
-      el.setAttribute("aria-label", `Chat with ${CONTACT.name} on WhatsApp`);
-    }
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener noreferrer");
   });
 
   document.querySelectorAll('[data-contact="email"]').forEach((el) => {
     el.setAttribute("href", mailUrl);
-    if (!el.getAttribute("aria-label")) {
-      el.setAttribute("aria-label", `Send an email to ${CONTACT.email}`);
-    }
   });
 
   document.querySelectorAll('[data-contact="phone"]').forEach((el) => {
     el.setAttribute("href", telUrl);
-    if (!el.getAttribute("aria-label")) {
-      el.setAttribute("aria-label", `Call ${CONTACT.name} at ${CONTACT.phone}`);
-    }
   });
 
   document.querySelectorAll('[data-contact="instagram"]').forEach((el) => {
     el.setAttribute("href", igUrl);
     el.setAttribute("target", "_blank");
     el.setAttribute("rel", "noopener noreferrer");
-    if (!el.getAttribute("aria-label")) {
-      el.setAttribute("aria-label", `Visit ${CONTACT.name}'s Instagram profile`);
-    }
   });
 
-  // Text values
+  // Text Hydrations
   document.querySelectorAll('[data-contact-text="name"]').forEach((el) => {
     el.textContent = CONTACT.name;
+  });
+
+  document.querySelectorAll('[data-contact-text="role"]').forEach((el) => {
+    el.textContent = CONTACT.role;
   });
 
   document.querySelectorAll('[data-contact-text="email"]').forEach((el) => {
@@ -106,106 +194,71 @@ function hydrateContactDetails() {
   document.querySelectorAll('[data-contact-text="instagram"]').forEach((el) => {
     el.textContent = `@${CONTACT.instagram}`;
   });
+
+  document.querySelectorAll('[data-contact-text="location"]').forEach((el) => {
+    el.textContent = CONTACT.location;
+  });
 }
 
 /**
- * Mobile Navigation: 100dvh dialog, safe-area padding, focus trap & Escape handling
+ * Audio Toggle Button (Sound [OFF / ON])
  */
-function initMobileMenu() {
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileNav = document.getElementById("mobile-nav");
-  const closeBtn = document.getElementById("mobile-nav-close");
+function initSoundToggle() {
+  const soundBtns = document.querySelectorAll(".sound-toggle-btn");
+  if (!soundBtns.length) return;
 
-  if (!menuToggle || !mobileNav) return;
-
-  const focusableSelectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
-  let firstFocusable = null;
-  let lastFocusable = null;
-
-  function updateFocusables() {
-    const focusables = Array.from(mobileNav.querySelectorAll(focusableSelectors));
-    firstFocusable = focusables[0] || null;
-    lastFocusable = focusables[focusables.length - 1] || null;
-  }
-
-  function openMenu() {
-    mobileNav.classList.add("is-active");
-    mobileNav.setAttribute("aria-hidden", "false");
-    menuToggle.setAttribute("aria-expanded", "true");
-    document.documentElement.classList.add("nav-open");
-    document.body.classList.add("nav-open");
-
-    updateFocusables();
-    if (closeBtn) closeBtn.focus();
-    document.addEventListener("keydown", handleKeydown);
-  }
-
-  function closeMenu() {
-    mobileNav.classList.remove("is-active");
-    mobileNav.setAttribute("aria-hidden", "true");
-    menuToggle.setAttribute("aria-expanded", "false");
-    document.documentElement.classList.remove("nav-open");
-    document.body.classList.remove("nav-open");
-
-    document.removeEventListener("keydown", handleKeydown);
-    menuToggle.focus();
-  }
-
-  function handleKeydown(e) {
-    if (e.key === "Escape") {
-      e.preventDefault();
-      closeMenu();
-      return;
-    }
-
-    if (e.key === "Tab") {
-      updateFocusables();
-      if (!firstFocusable || !lastFocusable) return;
-
-      if (e.shiftKey) {
-        if (document.activeElement === firstFocusable) {
-          e.preventDefault();
-          lastFocusable.focus();
-        }
-      } else {
-        if (document.activeElement === lastFocusable) {
-          e.preventDefault();
-          firstFocusable.focus();
-        }
+  const updateButtons = () => {
+    soundBtns.forEach((btn) => {
+      const stateSpan = btn.querySelector(".sound-state");
+      if (stateSpan) {
+        stateSpan.textContent = window.SITE.SOUND_ENABLED ? "ON" : "OFF";
       }
-    }
-  }
+      btn.setAttribute("aria-pressed", window.SITE.SOUND_ENABLED ? "true" : "false");
+      btn.classList.toggle("is-active", window.SITE.SOUND_ENABLED);
+    });
+  };
 
-  menuToggle.addEventListener("click", () => {
-    const isOpen = mobileNav.classList.contains("is-active");
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeMenu);
-  }
-
-  // Close menu on link click
-  mobileNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMenu();
+  soundBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      window.SITE.SOUND_ENABLED = !window.SITE.SOUND_ENABLED;
+      updateButtons();
+      if (window.SITE.SOUND_ENABLED) {
+        SoundEngine.playClick();
+      }
     });
   });
 
-  // Auto-close when resized to desktop viewport
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 1024 && mobileNav.classList.contains("is-active")) {
-      closeMenu();
-    }
+  // Attach sound triggers to all buttons & interactive links
+  document.querySelectorAll("a, button, .interactive-card").forEach((el) => {
+    el.addEventListener("mouseenter", () => SoundEngine.playHover());
+    el.addEventListener("click", () => SoundEngine.playClick());
   });
 }
 
 /**
- * Back to top button smooth scroll
+ * Real-time Indian Standard Time (IST) Clock
+ */
+function initLiveClock() {
+  const clockEl = document.getElementById("live-ist-time");
+  if (!clockEl) return;
+
+  function updateTime() {
+    const options = {
+      timeZone: "Asia/Kolkata",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true
+    };
+    clockEl.textContent = new Intl.DateTimeFormat("en-US", options).format(new Date());
+  }
+
+  updateTime();
+  setInterval(updateTime, 1000);
+}
+
+/**
+ * Smooth Back to top handler
  */
 function initBackToTop() {
   const btn = document.getElementById("back-to-top");
@@ -213,6 +266,7 @@ function initBackToTop() {
 
   btn.addEventListener("click", (e) => {
     e.preventDefault();
+    SoundEngine.playClick();
     if (window.__lenis) {
       window.__lenis.scrollTo(0, { duration: 1.2 });
     } else {
@@ -222,7 +276,7 @@ function initBackToTop() {
 }
 
 /**
- * Preload and decode images safely in idle time to prevent layout shift during animation
+ * Preload and decode images safely in background idle time
  */
 function setupImagePreloading() {
   const images = Array.from(document.querySelectorAll("img"));
@@ -230,9 +284,7 @@ function setupImagePreloading() {
   const decodeImages = () => {
     images.forEach((img) => {
       if ("decode" in img) {
-        img.decode().catch(() => {
-          // Fallback handled via HTML onerror attribute
-        });
+        img.decode().catch(() => {});
       }
     });
   };
@@ -245,7 +297,7 @@ function setupImagePreloading() {
 }
 
 /**
- * Watchdog timer: If motion engine fails to signal readiness in 8s, remove .has-js
+ * Fail-Safe Watchdog Timer: 8s fallback guarantee
  */
 function setupFailSafeWatchdog() {
   setTimeout(() => {
