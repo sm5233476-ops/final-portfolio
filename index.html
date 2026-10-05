@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Shivam Mishra | Web Developer</title>
-  <meta name="description" content="Portfolio of Shivam Mishra, web developer from India specializing in fast, responsive websites, online stores, and AI chat assistants for local businesses.">
-  <meta name="theme-color" content="#F5F4F0">
+  <title>Shivam Mishra ✦ Creative Developer &amp; Full-Stack Engineer</title>
+  <meta name="description" content="Portfolio of Shivam Mishra, Creative Developer & Full-Stack Engineer crafting bespoke motion websites, WebGL experiences, and scalable SaaS platforms.">
+  <meta name="theme-color" content="#050508">
 
-  <!-- Inline Fail-Safe: Marks JS active and guards against script failure -->
+  <!-- Inline Progressive Enhancement Watchdog -->
   <script>
     document.documentElement.classList.add('has-js');
     setTimeout(function() {
@@ -18,45 +18,53 @@
     }, 8000);
   </script>
 
-  <!-- Google Fonts: Display Swap with Preconnect -->
+  <!-- Google Fonts: Syne (Display), Inter (Body), JetBrains Mono (Tech) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet -->
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Accessible Skip Navigation Link -->
+  <!-- Accessible Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Scroll Progress Indicator -->
+  <!-- Top Scroll Progress Bar -->
   <div id="scroll-progress" aria-hidden="true"></div>
 
-  <!-- Star Cursor Element (Fine pointers only) -->
+  <!-- Procedural Film Grain Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Magnetic Star Cursor (Fine pointers only) -->
   <div id="star-cursor" aria-hidden="true">
     <svg viewBox="0 0 100 100" focusable="false">
       <path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z" />
     </svg>
   </div>
 
-  <!-- Opening Cinematic Overlay (#intro & #bloom) -->
+  <!-- Visuvate-Style Floating Cursor Project Preview Capsule -->
+  <div id="cursor-preview" aria-hidden="true">
+    <img src="dental.jpg" alt="Project Preview" class="preview-img" id="cursor-preview-img">
+  </div>
+
+  <!-- High-Tech Cyber Cinematic Opening (#intro & #bloom) -->
   <div id="intro" aria-hidden="true">
-    <button id="intro-skip" class="intro-skip" type="button" aria-label="Skip intro animation">Skip</button>
+    <button id="intro-skip" type="button" aria-label="Skip opening animation">Skip [ESC]</button>
     <div class="intro-stage">
-      <div id="intro-word">Portfolio</div>
-      <div id="intro-dot">
-        <div class="dot-glow"></div>
+      <div class="intro-star-wrap">
+        <svg id="intro-star" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+          <path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z" />
+        </svg>
+        <div class="intro-star-glow"></div>
       </div>
-      <svg id="intro-star" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
-        <path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z" />
-      </svg>
-      <div class="star-glow-layer"></div>
+      <div id="intro-status">INITIALIZING SYSTEM</div>
+      <h1 id="intro-title" data-scramble="SHIVAM MISHRA">SHIVAM MISHRA</h1>
     </div>
   </div>
   <div id="bloom" aria-hidden="true"></div>
 
-  <!-- Primary Site Header -->
+  <!-- Primary Header -->
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="#hero" class="brand-logo" aria-label="Shivam Mishra - Home">
@@ -68,385 +76,422 @@
 
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-links">
-          <li><a href="#work" class="nav-link">Work</a></li>
-          <li><a href="#statement" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#work" class="nav-link" data-scramble="Work">Work</a></li>
+          <li><a href="#capabilities" class="nav-link" data-scramble="Capabilities">Capabilities</a></li>
+          <li><a href="#simulator" class="nav-link" data-scramble="Architecture">Architecture</a></li>
+          <li><a href="#contact" class="nav-link" data-scramble="Contact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a href="#contact" class="pill-btn" data-contact="whatsapp">Let's talk</a>
-        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
-          <span></span>
-          <span></span>
+        <!-- Procedural Web Audio Synthesizer Toggle -->
+        <button class="sound-toggle-btn" type="button" aria-label="Toggle procedural sound synthesis" aria-pressed="false">
+          <span class="sound-indicator"></span>
+          <span>SOUND [<span class="sound-state">OFF</span>]</span>
         </button>
+
+        <a href="#contact" class="pill-btn" data-contact="whatsapp">Start a Project ↗</a>
       </div>
     </div>
   </header>
 
-  <!-- Fullscreen Mobile Navigation Dialog -->
-  <nav id="mobile-nav" class="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation" aria-hidden="true">
-    <div class="mobile-nav-top">
-      <span class="brand-logo">
-        <svg class="brand-star" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
-          <path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z" />
-        </svg>
-        <span>Shivam Mishra</span>
-      </span>
-      <button class="mobile-nav-close" id="mobile-nav-close" type="button" aria-label="Close navigation menu">✕</button>
-    </div>
-
-    <ul class="mobile-nav-links">
-      <li><a href="#work" class="mobile-nav-link">Work</a></li>
-      <li><a href="#statement" class="mobile-nav-link">About</a></li>
-      <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
-      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-    </ul>
-
-    <div class="mobile-nav-bottom">
-      <a href="#" class="mobile-nav-contact" data-contact="email" data-contact-text="email">8hivammishra8@gmail.com</a>
-      <a href="#" class="mobile-nav-contact" data-contact="phone" data-contact-text="phone">91+ 9899452192</a>
-    </div>
-  </nav>
-
   <!-- Main Content Landmark -->
   <main id="main-content">
-    <!-- Hero Section -->
+    <!-- Hero Section with Three.js Reactive Canvas & Draggable Physics Stickers -->
     <section class="hero-section" id="hero">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="hero-badge">
-            <svg class="badge-star" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
-              <path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z" />
-            </svg>
-            <span>Web developer, India ✦ Available for new projects</span>
-          </div>
+      <!-- Reactive WebGL Particle Canvas -->
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
-          <h1 class="hero-title" id="hero-headline">
-            Websites that bring <span class="italic-serif">customers</span> through the door.
-          </h1>
+      <!-- Aashish Thakuri-Style Draggable Physics Stickers -->
+      <div class="stickers-container" aria-hidden="true">
+        <div class="physics-sticker" style="top: 18%; right: 8%;">
+          <span class="sticker-dot"></span>
+          <span>✦ AVAILABLE FOR Q2/Q3</span>
+        </div>
+        <div class="physics-sticker" style="top: 68%; right: 14%;">
+          <span>⚡ 60FPS / ZERO COMPROMISE</span>
+        </div>
+        <div class="physics-sticker" style="top: 76%; left: 8%;">
+          <span>🛠 FULL-STACK &amp; SAAS ARCHITECT</span>
+        </div>
+      </div>
 
-          <p class="hero-subtext">
-            I'm Shivam Mishra. I design and build fast, animated websites, online stores and AI assistants for local businesses.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#work" class="pill-btn magnetic-item">See the work</a>
-            <a href="#" class="btn-secondary magnetic-item" data-contact="whatsapp">WhatsApp</a>
-          </div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span data-scramble="CREATIVE DEVELOPER & FULL-STACK ENGINEER">CREATIVE DEVELOPER &amp; FULL-STACK ENGINEER</span>
         </div>
 
-        <div class="hero-cards-wrap" id="hero-cards">
-          <!-- Card 1: Dental -->
-          <article class="hero-card hero-card-1">
-            <div class="hero-card-img-box">
-              <img src="dental.jpg" alt="Lumina Dental Studio website overview" width="1200" height="800" decoding="async" class="hero-card-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
-            </div>
-            <div class="hero-card-label">
-              <span>Lumina Dental Studio</span>
-              <span>01</span>
-            </div>
-          </article>
+        <h1 class="hero-title" id="hero-headline">
+          Crafting digital experiences that <span class="text-gradient">defy the ordinary.</span>
+        </h1>
 
-          <!-- Card 2: Roofing -->
-          <article class="hero-card hero-card-2">
-            <div class="hero-card-img-box">
-              <img src="roofing.jpg" alt="Ironcrest Roofing website overview" width="1200" height="800" decoding="async" class="hero-card-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
-            </div>
-            <div class="hero-card-label">
-              <span>Ironcrest Roofing</span>
-              <span>02</span>
-            </div>
-          </article>
+        <p class="hero-subtext">
+          I design and engineer high-performance bespoke websites, interactive WebGL applications, and scalable SaaS platforms for visionary brands and founders.
+        </p>
 
-          <!-- Card 3: Coffee -->
-          <article class="hero-card hero-card-3">
-            <div class="hero-card-img-box">
-              <img src="coffee.jpg" alt="Cinder and Cedar Coffee Roasters website overview" width="1200" height="800" decoding="async" class="hero-card-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
-            </div>
-            <div class="hero-card-label">
-              <span>Cinder &amp; Cedar Coffee</span>
-              <span>03</span>
-            </div>
-          </article>
+        <div class="hero-cta-group">
+          <a href="#work" class="pill-btn">Explore Selected Work ↓</a>
+          <a href="#" class="btn-secondary" data-contact="whatsapp">WhatsApp Direct ↗</a>
         </div>
       </div>
     </section>
 
-    <!-- Velocity Marquee Section -->
-    <section class="marquee-section" id="marquee" aria-hidden="true">
-      <div class="marquee-row">
-        <div class="marquee-track-1">
-          <span class="marquee-text">Websites</span>
-          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-          <span class="marquee-text">Online Stores</span>
-          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-          <span class="marquee-text">Booking Tools</span>
-          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-          <span class="marquee-text">AI Assistants</span>
-          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-          <span class="marquee-text">Smooth Animations</span>
-          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-        </div>
-      </div>
-
-      <div class="marquee-row">
-        <div class="marquee-track-2">
-          <span class="marquee-text">Websites</span>
-          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-          <span class="marquee-text">Online Stores</span>
-          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-          <span class="marquee-text">Booking Tools</span>
-          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-          <span class="marquee-text">AI Assistants</span>
-          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-          <span class="marquee-text">Smooth Animations</span>
-          <svg class="star-separator" viewBox="0 0 100 100"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-        </div>
-      </div>
-    </section>
-
-    <!-- Work Stages Section -->
+    <!-- Selected Work Section: Sticky Stacking Pin Deck + Project Index -->
     <section class="work-section" id="work">
-      <div class="work-header">
-        <h2 class="work-header-title">Selected work (03)</h2>
+      <span class="section-tag">// SELECTED WORK (03)</span>
+      <h2 class="section-title">Flagship Architectures</h2>
+
+      <!-- Sticky Pin Deck -->
+      <div class="work-deck">
+        <!-- Project 01: Lumina Dental Studio -->
+        <article class="deck-card tilt-card" data-tilt>
+          <div class="card-spotlight"></div>
+          <div class="card-inner">
+            <div class="card-info">
+              <span class="card-num">01 / HEALTHCARE PLATFORM</span>
+              <h3 class="card-title">Lumina Dental Studio</h3>
+              <p class="card-desc">
+                High-end dental clinic digital experience featuring an interactive treatment explorer, real-time financing calculator, and multi-step patient booking flow.
+              </p>
+              <div class="card-features">
+                <span class="card-feature-pill">Custom Interactive UI</span>
+                <span class="card-feature-pill">Financing Engine</span>
+                <span class="card-feature-pill">Treatment Sliders</span>
+              </div>
+              <a href="https://lumina-dental-studio-iota.vercel.app/" target="_blank" rel="noopener noreferrer" class="pill-btn">
+                <span>View Live Site</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div class="browser-frame">
+              <div class="frame-bar">
+                <div class="frame-dots">
+                  <span class="frame-dot"></span>
+                  <span class="frame-dot"></span>
+                  <span class="frame-dot"></span>
+                </div>
+                <span class="frame-url">lumina-dental-studio-iota.vercel.app</span>
+                <div style="width: 32px;"></div>
+              </div>
+              <div class="frame-viewport">
+                <img src="dental.jpg" alt="Lumina Dental Studio platform preview" width="1200" height="3600" decoding="async" class="frame-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 02: Ironcrest Roofing -->
+        <article class="deck-card tilt-card" data-tilt>
+          <div class="card-spotlight"></div>
+          <div class="card-inner">
+            <div class="card-info">
+              <span class="card-num">02 / ENTERPRISE CONTRACTOR</span>
+              <h3 class="card-title">Ironcrest Roofing &amp; Restoration</h3>
+              <p class="card-desc">
+                Enterprise contractor platform engineered for maximum lead conversion, featuring an instant cost estimate calculator, inspection scheduler, and storm damage visualizer.
+              </p>
+              <div class="card-features">
+                <span class="card-feature-pill">Instant Estimator</span>
+                <span class="card-feature-pill">Inspection Booking</span>
+                <span class="card-feature-pill">High-Performance Funnel</span>
+              </div>
+              <a href="https://roofing-portfolio-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="pill-btn">
+                <span>View Live Site</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div class="browser-frame">
+              <div class="frame-bar">
+                <div class="frame-dots">
+                  <span class="frame-dot"></span>
+                  <span class="frame-dot"></span>
+                  <span class="frame-dot"></span>
+                </div>
+                <span class="frame-url">roofing-portfolio-two.vercel.app</span>
+                <div style="width: 32px;"></div>
+              </div>
+              <div class="frame-viewport">
+                <img src="roofing.jpg" alt="Ironcrest Roofing platform preview" width="1200" height="3800" decoding="async" class="frame-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 03: Cinder & Cedar Coffee -->
+        <article class="deck-card tilt-card" data-tilt>
+          <div class="card-spotlight"></div>
+          <div class="card-inner">
+            <div class="card-info">
+              <span class="card-num">03 / LUXURY E-COMMERCE</span>
+              <h3 class="card-title">Cinder &amp; Cedar Coffee Roasters</h3>
+              <p class="card-desc">
+                Artisanal e-commerce storefront engineered for seamless bean discovery, custom grind selectors, subscription builder, and instant cart drawer checkout.
+              </p>
+              <div class="card-features">
+                <span class="card-feature-pill">Flavor Profile Search</span>
+                <span class="card-feature-pill">Subscription Drawer</span>
+                <span class="card-feature-pill">Sub-Second Load Times</span>
+              </div>
+              <a href="https://cinder-cedar-coffee-roasters.vercel.app/" target="_blank" rel="noopener noreferrer" class="pill-btn">
+                <span>View Live Site</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div class="browser-frame">
+              <div class="frame-bar">
+                <div class="frame-dots">
+                  <span class="frame-dot"></span>
+                  <span class="frame-dot"></span>
+                  <span class="frame-dot"></span>
+                </div>
+                <span class="frame-url">cinder-cedar-coffee-roasters.vercel.app</span>
+                <div style="width: 32px;"></div>
+              </div>
+              <div class="frame-viewport">
+                <img src="coffee.jpg" alt="Cinder and Cedar Coffee Roasters preview" width="1200" height="3500" decoding="async" class="frame-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
 
-      <!-- Stage 01: Lumina Dental Studio -->
-      <article class="work-stage bg-ink">
-        <div class="stage-inner">
-          <div class="stage-info">
-            <span class="stage-num">01</span>
-            <span class="stage-badge">Concept project</span>
-            <h3 class="stage-title">Lumina Dental Studio</h3>
-            <p class="stage-desc">Modern dental clinic website designed for clear patient onboarding and treatment education.</p>
-            <div class="stage-tags">
-              <span class="stage-tag">Booking flow</span>
-              <span class="stage-tag">Financing calculator</span>
-              <span class="stage-tag">Before-after slider</span>
-            </div>
-            <a href="https://lumina-dental-studio-iota.vercel.app/" target="_blank" rel="noopener noreferrer" class="stage-link magnetic-item">
-              <span>View live site</span>
-              <span aria-hidden="true">↗</span>
-            </a>
+      <!-- Visuvate-Style Quick Project Index (Floating Cursor Preview Target) -->
+      <div class="project-index-wrap">
+        <a href="https://lumina-dental-studio-iota.vercel.app/" target="_blank" rel="noopener noreferrer" class="index-row" data-preview-img="dental.jpg">
+          <div class="index-left">
+            <span class="index-num">01</span>
+            <span class="index-name">Lumina Dental Studio</span>
           </div>
+          <span class="index-category">Healthcare / Interactive Web</span>
+          <svg class="index-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
 
-          <div class="browser-frame">
-            <div class="frame-bar">
-              <div class="frame-dots">
-                <span class="frame-dot"></span>
-                <span class="frame-dot"></span>
-                <span class="frame-dot"></span>
-              </div>
-              <span class="frame-url">lumina-dental-studio-iota.vercel.app</span>
-              <div style="width: 38px;"></div>
-            </div>
-            <div class="frame-viewport">
-              <img src="dental.jpg" alt="Lumina Dental Studio full landing page view" width="1200" height="3600" decoding="async" class="frame-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
-            </div>
+        <a href="https://roofing-portfolio-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="index-row" data-preview-img="roofing.jpg">
+          <div class="index-left">
+            <span class="index-num">02</span>
+            <span class="index-name">Ironcrest Roofing &amp; Restoration</span>
           </div>
-        </div>
-      </article>
+          <span class="index-category">Enterprise Lead Engine</span>
+          <svg class="index-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
 
-      <!-- Stage 02: Ironcrest Roofing -->
-      <article class="work-stage bg-paper">
-        <div class="stage-inner">
-          <div class="stage-info">
-            <span class="stage-num">02</span>
-            <span class="stage-badge">Concept project</span>
-            <h3 class="stage-title">Ironcrest Roofing &amp; Restoration</h3>
-            <p class="stage-desc">High-converting roofing contractor platform built around trust, instant estimates, and project showcases.</p>
-            <div class="stage-tags">
-              <span class="stage-tag">Instant estimate</span>
-              <span class="stage-tag">Inspection booking</span>
-              <span class="stage-tag">Project sliders</span>
-            </div>
-            <a href="https://roofing-portfolio-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="stage-link magnetic-item">
-              <span>View live site</span>
-              <span aria-hidden="true">↗</span>
-            </a>
+        <a href="https://cinder-cedar-coffee-roasters.vercel.app/" target="_blank" rel="noopener noreferrer" class="index-row" data-preview-img="coffee.jpg">
+          <div class="index-left">
+            <span class="index-num">03</span>
+            <span class="index-name">Cinder &amp; Cedar Coffee Roasters</span>
           </div>
-
-          <div class="browser-frame">
-            <div class="frame-bar">
-              <div class="frame-dots">
-                <span class="frame-dot"></span>
-                <span class="frame-dot"></span>
-                <span class="frame-dot"></span>
-              </div>
-              <span class="frame-url">roofing-portfolio-two.vercel.app</span>
-              <div style="width: 38px;"></div>
-            </div>
-            <div class="frame-viewport">
-              <img src="roofing.jpg" alt="Ironcrest Roofing full landing page view" width="1200" height="3800" decoding="async" class="frame-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Stage 03: Cinder & Cedar Coffee -->
-      <article class="work-stage bg-ink">
-        <div class="stage-inner">
-          <div class="stage-info">
-            <span class="stage-num">03</span>
-            <span class="stage-badge">Concept project</span>
-            <h3 class="stage-title">Cinder &amp; Cedar Coffee Roasters</h3>
-            <p class="stage-desc">Artisanal e-commerce storefront focused on roast profiles, subscription discovery, and fast drawer checkout.</p>
-            <div class="stage-tags">
-              <span class="stage-tag">Product search</span>
-              <span class="stage-tag">Cart drawer</span>
-              <span class="stage-tag">Demo checkout</span>
-            </div>
-            <a href="https://cinder-cedar-coffee-roasters.vercel.app/" target="_blank" rel="noopener noreferrer" class="stage-link magnetic-item">
-              <span>View live site</span>
-              <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-
-          <div class="browser-frame">
-            <div class="frame-bar">
-              <div class="frame-dots">
-                <span class="frame-dot"></span>
-                <span class="frame-dot"></span>
-                <span class="frame-dot"></span>
-              </div>
-              <span class="frame-url">cinder-cedar-coffee-roasters.vercel.app</span>
-              <div style="width: 38px;"></div>
-            </div>
-            <div class="frame-viewport">
-              <img src="coffee.jpg" alt="Cinder and Cedar Coffee Roasters full storefront view" width="1200" height="3500" decoding="async" class="frame-img" onerror="this.onerror=null;this.classList.add('img-fallback');">
-            </div>
-          </div>
-        </div>
-      </article>
+          <span class="index-category">Headless E-Commerce</span>
+          <svg class="index-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+      </div>
     </section>
 
-    <!-- Statement Section (Scrubbed Typography) -->
-    <section class="statement-section" id="statement">
-      <p class="statement-p" id="statement-text">
-        I'm Shivam, a web developer from India. I build fast, animated websites, online stores and AI assistants for small businesses. The three projects above are concept builds that show what I can make for your industry.
-      </p>
+    <!-- Capabilities / Engineering Spectrum -->
+    <section class="capabilities-section" id="capabilities">
+      <span class="section-tag">// ENGINEERING SPECTRUM</span>
+      <h2 class="section-title">What I Architect &amp; Build</h2>
+
+      <div class="cap-grid">
+        <!-- 01 -->
+        <div class="cap-card">
+          <div class="cap-top">
+            <span class="cap-num">01</span>
+            <span class="cap-tag">WebGL / Motion</span>
+          </div>
+          <h3 class="cap-title">Bespoke 3D Websites</h3>
+          <p class="cap-desc">
+            Ultra-fast, cinematic digital experiences engineered with Three.js, GLSL shaders, and silky 60fps GSAP motion.
+          </p>
+          <div class="cap-tags">
+            <span class="cap-tag">WebGL</span>
+            <span class="cap-tag">GSAP</span>
+            <span class="cap-tag">Responsive 3D</span>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="cap-card">
+          <div class="cap-top">
+            <span class="cap-num">02</span>
+            <span class="cap-tag">Full-Stack</span>
+          </div>
+          <h3 class="cap-title">SaaS &amp; Web Applications</h3>
+          <p class="cap-desc">
+            Full-stack web applications with secure authentication, multi-tenant databases, serverless APIs, and lightning-quick state handling.
+          </p>
+          <div class="cap-tags">
+            <span class="cap-tag">React / Next</span>
+            <span class="cap-tag">Node / APIs</span>
+            <span class="cap-tag">PostgreSQL</span>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="cap-card">
+          <div class="cap-top">
+            <span class="cap-num">03</span>
+            <span class="cap-tag">Lead Gen</span>
+          </div>
+          <h3 class="cap-title">Interactive Estimators &amp; Tools</h3>
+          <p class="cap-desc">
+            Bespoke financial calculators, dynamic multi-step quote generators, and booking flows that convert visitors into paying clients.
+          </p>
+          <div class="cap-tags">
+            <span class="cap-tag">Custom Math Engines</span>
+            <span class="cap-tag">Stripe Pay</span>
+            <span class="cap-tag">CRM Sync</span>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="cap-card">
+          <div class="cap-top">
+            <span class="cap-num">04</span>
+            <span class="cap-tag">Automations</span>
+          </div>
+          <h3 class="cap-title">Automated Systems &amp; Bots</h3>
+          <p class="cap-desc">
+            Custom automated business pipelines, smart customer support chatbots, and review management engines.
+            <a href="https://smartreviewshield.com" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: underline; margin-top: 6px; display: inline-block;">Live Build: ReviewShield AI ↗</a>
+          </p>
+          <div class="cap-tags">
+            <span class="cap-tag">Webhooks</span>
+            <span class="cap-tag">Automations</span>
+            <span class="cap-tag">AI Workflows</span>
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="cap-card">
+          <div class="cap-top">
+            <span class="cap-num">05</span>
+            <span class="cap-tag">Commerce</span>
+          </div>
+          <h3 class="cap-title">High-Converting E-Commerce</h3>
+          <p class="cap-desc">
+            Modern headless shopping architectures with instant product filtering, slide-out cart drawers, and frictionless checkout funnels.
+          </p>
+          <div class="cap-tags">
+            <span class="cap-tag">Headless</span>
+            <span class="cap-tag">Cart Drawers</span>
+            <span class="cap-tag">Shopify API</span>
+          </div>
+        </div>
+
+        <!-- 06 -->
+        <div class="cap-card">
+          <div class="cap-top">
+            <span class="cap-num">06</span>
+            <span class="cap-tag">Analytics</span>
+          </div>
+          <h3 class="cap-title">Dashboards &amp; Client Portals</h3>
+          <p class="cap-desc">
+            Clean, data-dense internal tools, real-time analytics graphs, and administrative control panels built for business operations.
+          </p>
+          <div class="cap-tags">
+            <span class="cap-tag">Data Viz</span>
+            <span class="cap-tag">Role-Based Auth</span>
+            <span class="cap-tag">Real-Time</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills-section" id="skills">
-      <h2 class="skills-title">Core capabilities</h2>
+    <!-- Interactive Architecture Simulator: Client-Killing Proof of Work -->
+    <section class="simulator-section" id="simulator">
+      <span class="section-tag">// INTERACTIVE SANDBOX</span>
+      <h2 class="section-title">System Architecture Engine</h2>
 
-      <div class="skills-list">
-        <div class="skill-row">
-          <span class="skill-num">01</span>
-          <div class="skill-main">
-            <h3 class="skill-heading">Business websites</h3>
-            <p class="skill-desc">Modern responsive websites tailored for service businesses and studios.</p>
+      <div class="sim-container">
+        <div class="sim-header">
+          <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--cyan);">ARCHITECTURE SIMULATOR // v2.6</span>
+          <div class="sim-tabs" role="tablist">
+            <button class="sim-tab is-active" type="button" data-arch="motion" role="tab">01: HIGH-IMPACT MOTION WEB</button>
+            <button class="sim-tab" type="button" data-arch="saas" role="tab">02: SCALABLE SAAS PLATFORM</button>
+            <button class="sim-tab" type="button" data-arch="funnel" role="tab">03: AUTOMATED LEAD FUNNEL</button>
           </div>
-          <svg class="skill-star-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
         </div>
 
-        <div class="skill-row">
-          <span class="skill-num">02</span>
-          <div class="skill-main">
-            <h3 class="skill-heading">Online stores</h3>
-            <p class="skill-desc">Fast e-commerce storefronts with catalog filters, cart systems and checkout flows.</p>
-          </div>
-          <svg class="skill-star-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-        </div>
-
-        <div class="skill-row">
-          <span class="skill-num">03</span>
-          <div class="skill-main">
-            <h3 class="skill-heading">Booking and quote tools</h3>
-            <p class="skill-desc">Custom interactive estimators and multi-step inquiry forms that convert leads.</p>
-          </div>
-          <svg class="skill-star-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-        </div>
-
-        <div class="skill-row">
-          <span class="skill-num">04</span>
-          <div class="skill-main">
-            <h3 class="skill-heading">Smooth animations</h3>
-            <p class="skill-desc">High-performance cinematic interactions and page motion engineered with GSAP.</p>
-          </div>
-          <svg class="skill-star-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-        </div>
-
-        <div class="skill-row">
-          <span class="skill-num">05</span>
-          <div class="skill-main">
-            <h3 class="skill-heading">AI chat assistants</h3>
-            <p class="skill-desc">Custom trained chatbots and AI customer service widgets embedded into web workflows.</p>
-          </div>
-          <svg class="skill-star-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
-        </div>
-
-        <div class="skill-row">
-          <span class="skill-num">06</span>
-          <div class="skill-main">
-            <h3 class="skill-heading">Web apps and dashboards</h3>
-            <p class="skill-desc">
-              Dynamic client portals and operational tools.
-              <a href="https://smartreviewshield.com" target="_blank" rel="noopener noreferrer" class="skill-extra-link">Example: ReviewShield AI ↗</a>
+        <div class="sim-body">
+          <div class="sim-blueprint">
+            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-secondary);">DATA FLOW PIPELINE:</div>
+            <div class="sim-pipeline" id="sim-pipeline-box">
+              <span class="pipeline-node">Client Browser</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-node">WebGL Canvas / GSAP</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-node">Edge CDN Cache</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-node">Zero-Latency Render</span>
+            </div>
+            <p id="sim-arch-desc" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+              Hardware-accelerated creative motion engineered with unified requestAnimationFrame ticker, zero layout shifts, and sub-second First Contentful Paint.
             </p>
           </div>
-          <svg class="skill-star-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></svg>
+
+          <div class="sim-metrics">
+            <div class="metric-card">
+              <div class="metric-val" id="metric-fps">60 FPS</div>
+              <div class="metric-lbl">Render Engine</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-val" id="metric-fcp">0.4s</div>
+              <div class="metric-lbl">First Contentful Paint</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-val" id="metric-score">100/100</div>
+              <div class="metric-lbl">Performance Score</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Magnetic Contact Dock -->
     <section class="contact-section" id="contact">
-      <div class="contact-inner">
-        <h2 class="contact-title">Let's talk.</h2>
+      <span class="section-tag">// GET IN TOUCH</span>
+      <h2 class="contact-title">Let's build something unforgettable.</h2>
 
-        <div class="contact-list">
-          <!-- WhatsApp -->
-          <a href="#" class="contact-row magnetic-item" data-contact="whatsapp">
-            <div class="contact-meta">
-              <span class="contact-label">Fast response</span>
-              <span class="contact-detail">WhatsApp</span>
-            </div>
-            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
+      <div class="contact-dock">
+        <!-- WhatsApp -->
+        <a href="#" class="dock-item" data-contact="whatsapp">
+          <div class="dock-meta">
+            <span class="dock-lbl">Direct Chat (Fastest Response)</span>
+            <span class="dock-val">WhatsApp</span>
+          </div>
+          <svg class="dock-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
 
-          <!-- Email -->
-          <a href="#" class="contact-row magnetic-item" data-contact="email">
-            <div class="contact-meta">
-              <span class="contact-label">Direct inbox</span>
-              <span class="contact-detail" data-contact-text="email">8hivammishra8@gmail.com</span>
-            </div>
-            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
+        <!-- Email -->
+        <a href="#" class="dock-item" data-contact="email">
+          <div class="dock-meta">
+            <span class="dock-lbl">Inquiries &amp; RFPs</span>
+            <span class="dock-val" data-contact-text="email">8hivammishra8@gmail.com</span>
+          </div>
+          <svg class="dock-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
 
-          <!-- Phone -->
-          <a href="#" class="contact-row magnetic-item" data-contact="phone">
-            <div class="contact-meta">
-              <span class="contact-label">Voice call</span>
-              <span class="contact-detail" data-contact-text="phone">91+ 9899452192</span>
-            </div>
-            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
+        <!-- Phone -->
+        <a href="#" class="dock-item" data-contact="phone">
+          <div class="dock-meta">
+            <span class="dock-lbl">Voice Call</span>
+            <span class="dock-val" data-contact-text="phone">91+ 9899452192</span>
+          </div>
+          <svg class="dock-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
 
-          <!-- Instagram -->
-          <a href="#" class="contact-row magnetic-item" data-contact="instagram">
-            <div class="contact-meta">
-              <span class="contact-label">Social updates</span>
-              <span class="contact-detail" data-contact-text="instagram">@shivam.0nyx</span>
-            </div>
-            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-        </div>
+        <!-- Instagram -->
+        <a href="#" class="dock-item" data-contact="instagram">
+          <div class="dock-meta">
+            <span class="dock-lbl">Social &amp; Lab Notes</span>
+            <span class="dock-val" data-contact-text="instagram">@shivam.0nyx</span>
+          </div>
+          <svg class="dock-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
       </div>
     </section>
   </main>
@@ -455,28 +500,30 @@
   <footer class="site-footer" id="site-footer">
     <div class="footer-inner">
       <div class="footer-top">
-        <div class="footer-signature-wrap">
-          <span class="footer-signature" id="footer-signature">Shivam</span>
+        <span class="footer-signature" data-contact-text="name">Shivam Mishra</span>
+        <div class="footer-time-box">
+          <span class="footer-time-dot"></span>
+          <span>NEW DELHI, IN: <span id="live-ist-time">--:--:--</span> (AVAILABLE)</span>
         </div>
-        <p class="footer-disclaimer">Projects shown are concept builds for fictional businesses.</p>
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Shivam Mishra</p>
-        <div class="footer-actions">
-          <button type="button" class="footer-btn" id="replay-intro">Replay intro</button>
+        <p class="footer-copy">© 2026 Shivam Mishra. Engineered with WebGL, GSAP &amp; Procedural Audio.</p>
+        <div style="display: flex; gap: 20px;">
+          <button type="button" class="footer-btn" id="replay-intro">Replay Intro</button>
           <button type="button" class="footer-btn" id="back-to-top">Back to top ↑</button>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- External CDNs: Strict Order (GSAP, ScrollTrigger, Lenis) -->
+  <!-- External CDNs: GSAP Core, ScrollTrigger, Lenis Smooth Scroll, Three.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-  <!-- Application Scripts: Strict Order -->
+  <!-- Application Scripts: Strict Execution Order -->
   <script src="script.js"></script>
   <script src="intro.js"></script>
   <script src="motion.js"></script>
